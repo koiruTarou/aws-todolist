@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import merryOwl from './assets/merryOwl.png';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);   
+  const [showGifts, setShowGifts] = useState(false);
+
+  const gifts = ["🎁 プレゼント", "🕯 キャンドル", "🌟 星"];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1 className="sparkle-text">Merry Christmas</h1>
+     <img src={merryOwl} alt="Merry Owl" className="merry-owl" />
+
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button className="big-button" onClick={() => setCount((c) => c + 1)}>
+          フクロウさんが可愛かったらクリックしてね。 {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        {count >= 1 && <p className="big-text">🎉 クリックありがとうございます！</p>}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className="card">
+        <button className="big-button" onClick={() => setShowGifts(true)}>
+          ギフトを表示する
+        </button>
+      </div>
+
+      {showGifts && (
+        <ul className="big-text">
+          {gifts.map((gift, i) => (
+            <li key={i}>{gift}</li>
+          ))}
+        </ul>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
