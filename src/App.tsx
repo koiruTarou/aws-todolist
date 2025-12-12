@@ -3,7 +3,6 @@ import merryOwl from './assets/merryOwl.png';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);   
   const [showGifts, setShowGifts] = useState(false);
 
   const gifts = ["🎁 プレゼント", "🕯 キャンドル", "🌟 星"];
@@ -12,14 +11,6 @@ function App() {
     <>
       <h1 className="sparkle-text">Merry Christmas</h1>
      <img src={merryOwl} alt="Merry Owl" className="merry-owl" />
-
-
-      <div className="card">
-        <button className="big-button" onClick={() => setCount((c) => c + 1)}>
-          フクロウさんが可愛かったらクリックしてね！ {count}
-        </button>
-        {count >= 1 && <p className="big-text">🎉 クリックありがとうございます！</p>}
-      </div>
 
       <div className="card">
         <button className="big-button" onClick={() => setShowGifts(true)}>
