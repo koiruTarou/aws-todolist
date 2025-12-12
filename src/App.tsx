@@ -16,7 +16,7 @@ function App() {
 
       <div className="card">
         <button className="big-button" onClick={() => setCount((c) => c + 1)}>
-          フクロウさんが可愛かったらクリックしてね。 {count}
+          フクロウさんが可愛かったらクリックしてね！ {count}
         </button>
         {count >= 1 && <p className="big-text">🎉 クリックありがとうございます！</p>}
       </div>
