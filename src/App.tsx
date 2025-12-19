@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import merryOwl from './assets/merryOwl.png';
+import merryOwl from './assets/merryOwl2.png';
 import './App.css';
 
 function App() {
